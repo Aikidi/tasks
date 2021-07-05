@@ -1,0 +1,24 @@
+const reverseString = (string, maxLength) => {
+  let result;
+  if (string.length >= maxLength) {
+    result = string.split("").reverse().join("");
+  } else {
+    result = string;
+  } 
+  return result;
+}
+
+function spinWords(string){
+  let stringArr = string.split(' ');
+  let changedString = [];
+
+  stringArr.forEach(function(item){
+    item = reverseString(item, 5);
+    changedString.push(item);    
+  })
+  changedString = changedString.join(' ')
+  console.log(changedString);
+  return changedString;
+}
+
+spinWords("Hey fellow warriors");
