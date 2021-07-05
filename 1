@@ -1,0 +1,25 @@
+//Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed
+
+const reverseString = (string, maxLength) => {
+  let result;
+  if (string.length >= maxLength) {
+    result = string.split("").reverse().join("");
+  } else {
+    result = string;
+  } 
+  return result;
+}
+
+function spinWords(string){
+  let stringArr = string.split(' ');
+  let changedString = [];
+
+  stringArr.forEach(function(item){
+    item = reverseString(item, 5);
+    changedString.push(item);    
+  })
+  console.log(changedString);
+  return changedString.join(' ');
+}
+
+spinWords("Hey fellow warriors");
